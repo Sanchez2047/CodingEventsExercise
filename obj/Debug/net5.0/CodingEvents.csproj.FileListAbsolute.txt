@@ -41,3 +41,4 @@ C:\Users\sanch\Desktop\launchcode\Unit2\chapter9-10-13\CodingEvents\obj\Debug\ne
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter9-10-13\CodingEvents\obj\Debug\net5.0\CodingEvents.csproj.CopyComplete
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter9-10-13\CodingEvents\obj\Debug\net5.0\Razor\Views\Events\Add.cshtml.g.cs
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter9-10-13\CodingEvents\obj\Debug\net5.0\Razor\Views\Shared\_LinkListPartial.cshtml.g.cs
+C:\Users\sanch\desktop\launchcode\Unit2\chapter9-10-13\CodingEvents\bin\Debug\net5.0\Microsoft.VisualStudio.Web.BrowserLink.dll
