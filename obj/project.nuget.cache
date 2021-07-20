@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N2Bz0GsvbpI2Rhy6BJCNBLaxPT8p64xXo9zz7HW7i2SCJdEIte9HNsCuZkO3xjVd9cH/+aPv541MN4hls0Fw6Q==",
+  "dgSpecHash": "ze5UqdoCDfngFcujYBr9KS3yOBbS+TkzsPuVkZXhCgzQdOw7P3bA54JM+WPGu+XLPXioqhb0NA2OOf+V9tvUjw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sanch\\desktop\\launchcode\\Unit2\\chapter9-10-13\\CodingEvents\\CodingEvents.csproj",
+  "projectFilePath": "C:\\Users\\sanch\\Desktop\\launchcode\\Unit2\\chapter9-10-13\\CodingEvents\\CodingEvents.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sanch\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\sanch\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
