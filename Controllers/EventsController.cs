@@ -19,5 +19,11 @@ namespace CodingEvents.Controllers
             ViewBag.events = Events;
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
     }
 }
