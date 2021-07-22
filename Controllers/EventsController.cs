@@ -47,13 +47,16 @@ namespace CodingEvents.Controllers
 
             return Redirect("/Events");
         }
+
+        [HttpGet]
+        [Route("/Events/Edit/{eventId?}")]
         public IActionResult Edit(int eventId)
         {
             ViewBag.eventToEdit = EventData.GetById(eventId);
-            ViewBag.Title = "Edit Event NAME (id=ID)";
+            //ViewBag.Title = "Edit Event NAME (id=ID)";
             return View();
         }
-        [HttpPost("/Events/Edit/{id?}")]
+        [HttpPost("/Events/Edit")]
         public IActionResult SubmitEditEventForm(int eventId, string name, string description)
         {
             Event eventBeingEditited = EventData.GetById(eventId);
