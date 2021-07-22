@@ -53,7 +53,7 @@ namespace CodingEvents.Controllers
         public IActionResult Edit(int eventId)
         {
             ViewBag.eventToEdit = EventData.GetById(eventId);
-            //ViewBag.Title = "Edit Event NAME (id=ID)";
+            ViewBag.Title = "Edit Event NAME (id=ID)";
             return View();
         }
         [HttpPost("/Events/Edit")]
