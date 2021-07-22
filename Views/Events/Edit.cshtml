@@ -1,0 +1,10 @@
+﻿
+<h1>Edit Event</h1>
+<form method="post" action="/Events/Edit">
+    <label for="name">Edit Event</label><br />
+    <input type="text" name="name" value="@ViewBag.eventToEdit.Name"/><br />
+    <label for="description">Description</label><br />
+    <textarea name="description" value="@ViewBag.eventToEdit.Description"></textarea><br />
+    <input type="hidden" name="eventId" value="@ViewBag.eventToEdit.Id" />
+    <input type="submit" value="Edit Event" />
+</form>
