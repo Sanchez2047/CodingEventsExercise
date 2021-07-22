@@ -4,8 +4,7 @@
     <label for="name">Event</label><br />
     <input type="text" name="name" value="@ViewBag.eventToEdit.Name" /><br />
     <label for="description">Description</label><br />
-    @*<textarea name="description" value="@ViewBag.eventToEdit.Description"></textarea>*@<br />
-    <textarea name="description" value="Where is this description"></textarea><br />
+    <input type="text" name="description" value="@ViewBag.eventToEdit.Description"/><br />
     <input type="hidden" name="eventId" value="@ViewBag.eventToEdit.Id" />
     <input type="submit" value="Edit" />
 </form>
