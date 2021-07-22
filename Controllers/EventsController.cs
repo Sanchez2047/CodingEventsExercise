@@ -50,12 +50,16 @@ namespace CodingEvents.Controllers
         public IActionResult Edit(int eventId)
         {
             ViewBag.eventToEdit = EventData.GetById(eventId);
+            ViewBag.Title = "Edit Event NAME (id=ID)";
             return View();
         }
-        [HttpPost("/Events/Edit"]
+        [HttpPost("/Events/Edit/{id?}")]
         public IActionResult SubmitEditEventForm(int eventId, string name, string description)
         {
-
+            Event eventBeingEditited = EventData.GetById(eventId);
+            eventBeingEditited.Name = name;
+            eventBeingEditited.Description = description;
+            return Redirect("/Events");
         }
     }
 }

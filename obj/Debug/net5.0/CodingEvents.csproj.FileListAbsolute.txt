@@ -87,3 +87,4 @@ C:\Users\sanch\Desktop\launchcode\Unit2\chapter14\CodingEvents2\obj\Debug\net5.0
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter14\CodingEvents2\obj\Debug\net5.0\CodingEvents.pdb
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter14\CodingEvents2\obj\Debug\net5.0\CodingEvents.genruntimeconfig.cache
 C:\Users\sanch\Desktop\launchcode\Unit2\chapter14\CodingEvents2\obj\Debug\net5.0\Razor\Views\Events\Delete.cshtml.g.cs
+C:\Users\sanch\desktop\launchcode\unit2\chapter14\CodingEvents2\obj\Debug\net5.0\Razor\Views\Events\Edit.cshtml.g.cs
