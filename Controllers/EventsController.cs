@@ -1,5 +1,6 @@
 ﻿using CodingEvents.Data;
 using CodingEvents.Models;
+using CodingEvents.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,27 +16,43 @@ namespace CodingEvents.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.events = EventData.GetAll(); ;
-            return View();
+            List<Event> events = new List<Event>(EventData.GetAll()); 
+            return View(events);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            AddEventViewModel addEventViewModel = new AddEventViewModel();
+            return View(addEventViewModel);
         }
 
         [HttpPost]
-        [Route("/Events/Add")]
-        public IActionResult NewEvent(Event newEvent)
+        public IActionResult Add(AddEventViewModel addEventViewModel)
         {
-            EventData.Add(newEvent);
-            return Redirect("/Events");
+            if (ModelState.IsValid)
+            {
+                Event newEvent = new Event
+                {
+                    Name = addEventViewModel.Name,
+                    Description = addEventViewModel.Description,
+                    Location = addEventViewModel.Location,
+                    NumOfAttendees = addEventViewModel.NumOfAttendees,
+                    ContactEmail = addEventViewModel.ContactEmail,
+                    RegisterRequired = addEventViewModel.RegisterRequired
+                };
+                EventData.Add(newEvent);
+                return Redirect("/Events");
+            }
+            return View(addEventViewModel);
+
         }
         public IActionResult Delete()
         {
-            ViewBag.events = EventData.GetAll();
-            return View();
+            //ViewBag.events = EventData.GetAll();
+            List<Event> events = new List<Event>(EventData.GetAll());
+
+            return View(events);
         }
         [HttpPost]
         public IActionResult Delete(int [] eventIds)
@@ -57,11 +74,16 @@ namespace CodingEvents.Controllers
             return View();
         }
         [HttpPost("/Events/Edit")]
-        public IActionResult SubmitEditEventForm(int eventId, string name, string description)
+        public IActionResult SubmitEditEventForm(int eventId, string name, string description, string Location, int NumOfAttendees, string ContactEmail, bool RegisterRequired)
         {
             Event eventBeingEditited = EventData.GetById(eventId);
             eventBeingEditited.Name = name;
             eventBeingEditited.Description = description;
+            eventBeingEditited.Location = Location;
+            eventBeingEditited.NumOfAttendees = NumOfAttendees;
+            eventBeingEditited.ContactEmail = ContactEmail;
+            eventBeingEditited.RegisterRequired = RegisterRequired;
+
             return Redirect("/Events");
         }
     }
