@@ -33,8 +33,12 @@
     </div>
     <div class="form-group">
         <label asp-for="RegisterRequired">Register Required</label><br />
-        <input type="checkbox" name="RegisterRequired" value="true"/>
+        <input type="checkbox" name="RegisterRequired" value="true" checked/>
         <span asp-validation-for="RegisterRequired"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Type">Event Types</label>
+        <select asp-for="Type" asp-items="Model.EventTypes"></select>
     </div>
 
 
