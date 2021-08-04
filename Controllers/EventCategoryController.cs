@@ -22,5 +22,14 @@ namespace CodingEvents.Controllers
             List<EventCategory> eventCategories = _context.EventCategories.ToList();
             return View(eventCategories);
         }
+
+        public IActionResult Create()
+        {
+
+        }
+        public IActionResult ProcessCreateEventCategoryForm()
+        {
+
+        }
     }
 }
