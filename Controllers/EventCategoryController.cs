@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CodingEvents.ViewModels;
+
+
 
 namespace CodingEvents.Controllers
 {
@@ -25,10 +28,18 @@ namespace CodingEvents.Controllers
 
         public IActionResult Create()
         {
-
+            AddEventCategoryViewModel addEventCategoryViewModel = new AddEventCategoryViewModel();
+            return View(addEventCategoryViewModel);
         }
-        public IActionResult ProcessCreateEventCategoryForm()
+        [HttpPost("Create")]
+        public IActionResult ProcessCreateEventCategoryForm(AddEventCategoryViewModel addEventCategoryViewModel)
         {
+            if (ModelState.IsValid)
+            {
+                EventCategory eventCategory = new EventCategory(addEventCategoryViewModel.Name);
+                return Redirect("Index");
+            }
+            return View(addEventCategoryViewModel);
 
         }
     }
