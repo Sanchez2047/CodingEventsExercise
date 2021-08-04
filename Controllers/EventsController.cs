@@ -45,7 +45,6 @@ namespace CodingEvents.Controllers
                     NumOfAttendees = addEventViewModel.NumOfAttendees,
                     ContactEmail = addEventViewModel.ContactEmail,
                     Type = addEventViewModel.Type,
-                    RegisterRequired = addEventViewModel.RegisterRequired
                 };
 
                 _context.Events.Add(newEvent);
@@ -59,8 +58,7 @@ namespace CodingEvents.Controllers
         }
         public IActionResult Delete()
         {
-            //ViewBag.events = EventData.GetAll();
-            //List<Event> events = new List<Event>(EventData.GetAll());
+
 
             List<Event> events = _context.Events.ToList();
 
@@ -86,26 +84,39 @@ namespace CodingEvents.Controllers
         [Route("/Events/Edit/{eventId?}")]
         public IActionResult Edit(int eventId)
         {
-            //ViewBag.eventToEdit = EventData.GetById(eventId);
-            ViewBag.eventToEdit = _context.Events.Find(eventId);
-            ViewBag.Title = $"Edit Event \"{ViewBag.eventToEdit.Name}\" (id = \"{ViewBag.eventToEdit.Id}\")";
-            return View();
+            Event eventToEdit = _context.Events.Find(eventId);
+            AddEventViewModel addEventViewModel = new AddEventViewModel
+            {
+                Name = eventToEdit.Name,
+                Description = eventToEdit.Description,
+                Location = eventToEdit.Location,
+                NumOfAttendees = eventToEdit.NumOfAttendees,
+                ContactEmail = eventToEdit.ContactEmail,
+                Type = eventToEdit.Type,
+                Id = eventToEdit.Id
+            };
+
+            ViewBag.Title = $"Edit Event \"{addEventViewModel.Name}\" (id = \"{addEventViewModel.Id}\")";
+            return View(addEventViewModel);
         }
-        [HttpPost("/Events/Edit")]
-        public IActionResult SubmitEditEventForm(int eventId, string name, string description, string Location, int NumOfAttendees, string ContactEmail, bool RegisterRequired)
+        [HttpPost]
+        public IActionResult Edit(AddEventViewModel addEventViewModel)
         {
-            Event eventBeingEditited = _context.Events.Find(eventId);
-            eventBeingEditited.Name = name;
-            eventBeingEditited.Description = description;
-            eventBeingEditited.Location = Location;
-            eventBeingEditited.NumOfAttendees = NumOfAttendees;
-            eventBeingEditited.ContactEmail = ContactEmail;
-            eventBeingEditited.RegisterRequired = RegisterRequired;
+            if (ModelState.IsValid)
+            {
+                Event eventBeingEditited = _context.Events.Find(addEventViewModel.Id);
+                eventBeingEditited.Name = addEventViewModel.Name;
+                eventBeingEditited.Description = addEventViewModel.Description;
+                eventBeingEditited.Location = addEventViewModel.Location;
+                eventBeingEditited.NumOfAttendees = addEventViewModel.NumOfAttendees;
+                eventBeingEditited.ContactEmail = addEventViewModel.ContactEmail;
+                eventBeingEditited.Type = addEventViewModel.Type;
+                _context.SaveChanges();
+                return Redirect("/Events");
+            }
+            return View(addEventViewModel);
 
-            _context.SaveChanges();
 
-
-            return Redirect("/Events");
         }
     }
 }

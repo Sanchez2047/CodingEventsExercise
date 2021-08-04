@@ -37,9 +37,6 @@ namespace CodingEvents.Migrations
                     b.Property<int>("NumOfAttendees")
                         .HasColumnType("int");
 
-                    b.Property<bool>("RegisterRequired")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<int>("Type")
                         .HasColumnType("int");
 

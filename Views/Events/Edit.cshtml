@@ -1,23 +1,47 @@
-﻿
+﻿@using CodingEvents.ViewModels;
+
+@model AddEventViewModel
+
 <h1>@ViewBag.Title</h1>
-<form method="post" action="/Events/Edit">
+<form method="post" asp-controller="Events" asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Name">Event</label>
+        <span class="error" asp-validation-for="Name"></span><br />
+        <input asp-for="Name" value="@Model.Name" /><br />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <span class="error" asp-validation-for="Description"></span><br />
+        <input asp-for="Description" value="@Model.Description" /><br />
+    </div>
 
-    <label for="name">Event</label><br />
-    <input type="text" name="name" value="@ViewBag.eventToEdit.Name" /><br />
+    <div class="form-group">
+        <label asp-for="Location">Location</label>
+        <span class="error" asp-validation-for="Location"></span><br />
+        <input asp-for="Location" value="@Model.Location" /><br />
+    </div>
 
-    <label for="description">Description</label><br />
-    <input type="text" name="description" value="@ViewBag.eventToEdit.Description" /><br />
+    <div class="form-group">
+        <label asp-for="NumOfAttendees"># Of Attendees</label>
+        <span class="error" asp-validation-for="NumOfAttendees"></span><br />
+        <input asp-for="NumOfAttendees" value="@Model.NumOfAttendees" /><br />
+    </div>
 
-    <label for="Location">Location</label><br />
-    <input type="text" name="Location" value="@ViewBag.eventToEdit.Location" /><br />
+    <div class="form-group">
+        <label asp-for="ContactEmail">Contact Email</label>
+        <span class="error" asp-validation-for="ContactEmail"></span><br />
+        <input asp-for="ContactEmail" value="@Model.ContactEmail" /><br />
+    </div>
 
-    <label for="NumOfAttendees"># Of Attendees</label><br />
-    <input type="text" name="NumOfAttendees" value="@ViewBag.eventToEdit.NumOfAttendees" /><br />
+    <div class="form-group">
+        <label asp-for="Type">Event Type</label>
+        <span class="error" asp-validation-for="Type"></span><br />
+        <select asp-for="Type" asp-items="@Model.EventTypes"></select><br />
+    </div>
 
-    <label for="ContactEmail">Contact Email</label><br />
-    <input type="text" name="ContactEmail" value="@ViewBag.eventToEdit.ContactEmail" /><br />
-
-    <input type="hidden" name="eventId" value="@ViewBag.eventToEdit.Id" /><br />
-    <input type="submit" value="Edit" />
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" value="@Model.Id" readonly/><br />
+        <input type="submit" value="Edit" />
+    </div>
 </form>
 

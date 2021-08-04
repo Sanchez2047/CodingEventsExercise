@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodingEvents.Migrations
 {
     [DbContext(typeof(EventDbContext))]
-    [Migration("20210804151734_InitialMigration")]
+    [Migration("20210804170248_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,9 +38,6 @@ namespace CodingEvents.Migrations
 
                     b.Property<int>("NumOfAttendees")
                         .HasColumnType("int");
-
-                    b.Property<bool>("RegisterRequired")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");

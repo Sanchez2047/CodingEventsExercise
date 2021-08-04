@@ -25,8 +25,7 @@ namespace CodingEvents.Migrations
                     NumOfAttendees = table.Column<int>(type: "int", nullable: false),
                     ContactEmail = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Type = table.Column<int>(type: "int", nullable: false),
-                    RegisterRequired = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    Type = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
