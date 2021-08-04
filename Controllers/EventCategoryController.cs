@@ -37,10 +37,11 @@ namespace CodingEvents.Controllers
             if (ModelState.IsValid)
             {
                 EventCategory eventCategory = new EventCategory(addEventCategoryViewModel.Name);
-                return Redirect("Index");
+                _context.EventCategories.Add(eventCategory);
+                _context.SaveChanges();
+                return Redirect("EventCategory/Index");
             }
-            return View(addEventCategoryViewModel);
-
+            return View("Create",addEventCategoryViewModel);
         }
     }
 }
