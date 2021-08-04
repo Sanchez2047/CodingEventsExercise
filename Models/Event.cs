@@ -13,7 +13,7 @@ namespace CodingEvents.Models
         public int NumOfAttendees { get; set; }
         public string ContactEmail { get; set; }
         public EventType Type { get; set; }
-        //public bool RegisterRequired { get; set; }
+        public bool RegisterRequired { get; set; }
         public int Id { get; set; }
         public Event()
         {

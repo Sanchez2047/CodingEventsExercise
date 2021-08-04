@@ -187,3 +187,5 @@ C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExer
 C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExercise\obj\Debug\net5.0\ref\CodingEvents.dll
 C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExercise\obj\Debug\net5.0\CodingEvents.pdb
 C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExercise\obj\Debug\net5.0\CodingEvents.genruntimeconfig.cache
+C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExercise\bin\Debug\net5.0\Humanizer.dll
+C:\Users\sanch\Desktop\launchcode\unit2\chapter19\coding_events\CodingEventsExercise\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
